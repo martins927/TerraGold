@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraGold Homes | Where Luxury Finds Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">TerraGold<span>HOMES</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#" class="active">Home</a>
+      <a href="#properties">Properties</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <span class="phone">Call +234 701 253 6141</span>
+      <button class="btn btn-outline" id="enquireBtn">Enquire Now</button>
+      <button class="hamburger" id="menuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Where Luxury<br>Finds Home</h1>
+    <p>Discover exquisite luxury homes and properties in Lagos & Abuja. Curated homes designed for modern living, comfort, and elegance.</p>
+    <button class="btn btn-gold" id="viewBtn">View Properties</button>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80" alt="Luxury Villa">
+  </div>
+</section>
+
+<div class="search">
+  <div class="search-box">
+    <div class="field"><label>Location</label><select id="location"><option value="all">Lagos, Abuja</option><option value="Lagos">Lagos</option><option value="Abuja">Abuja</option></select></div>
+    <div class="field"><label>Property Type</label><select id="type"><option value="all">All Types</option><option value="Villa">Villa</option><option value="Residence">Residence</option><option value="Home">Home</option></select></div>
+    <div class="field"><label>Price Range</label><select id="price"><option value="all">Any Price</option><option value="low">Below ₦200M</option><option value="mid">₦200M - ₦300M</option><option value="high">Above ₦300M</option></select></div>
+    <button class="btn btn-gold" id="searchBtn">Search</button>
+  </div>
+</div>
+
+<section class="section" id="properties">
+  <h2>Featured Properties</h2>
+  <p>Handpicked luxury homes across Lagos & Abuja — Click any house to see details</p>
+  <div class="grid" id="propertyGrid"></div>
+  <div class="view-all"><a href="#" id="resetLink">View All Properties →</a></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-wrap">
+    <div class="about-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80" alt="TerraGold"></div>
+    <div>
+      <span class="gold-line">ABOUT TERRAGOLD</span>
+      <h2>We No Dey Sell House, We Dey Sell Lifestyle</h2>
+      <p>TerraGold Homes na premium real estate brand for Lagos & Abuja. We help families, investors and first-time buyers find verified, luxury homes without wahala.</p>
+      <div class="stats">
+        <div><b>120+</b><span>Properties Sold</span></div>
+        <div><b>85+</b><span>Happy Clients</span></div>
+        <div><b>2 Cities</b><span>Lagos & Abuja</span></div>
+      </div>
+      <ul class="check-list">
+        <li>✓ Verified titles — No Omonile wahala</li>
+        <li>✓ Inspection — Free for serious buyers</li>
+        <li>✓ Payment plan — Flexible for you</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Talk To Us</h2>
+  <p>Fill this form, e go open WhatsApp directly to TerraGold</p>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>TerraGold Homes</h3>
+      <p>📍 Maitama, Abuja & Lekki, Lagos</p>
+      <p>📞 +234 701 253 6141</p>
+      <p>✉️ hello@terragoldhomes.com</p>
+      <p>🕐 Mon - Sat: 9am - 6pm</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" id="cName" placeholder="Your Name" required>
+      <input type="tel" id="cPhone" placeholder="Your Phone / WhatsApp" required>
+      <select id="cInterest"><option>Interested in — Modern Villa Ikoyi</option><option>Contemporary Residence Maitama</option><option>Luxury Home Lekki</option><option>General Enquiry</option></select>
+      <textarea id="cMsg" placeholder="Your message..." rows="4"></textarea>
+      <button class="btn btn-gold" type="submit">Send on WhatsApp →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><b>TerraGold Homes</b> — Where Luxury Finds Home • Lagos • Abuja</p>
+  <p class="footer-small">© 2026 Designed and Developed by <span class="copyright"><a href="">MartinsConnect.</a></span> All rights reserved.</p>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/2347012536141?text=Hello%20TerraGold%2C%20I%20want%20to%20enquire%20about%20a%20property" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <span>💬</span> Chat Us
+</a>
+
+<!-- PROPERTY DETAILS MODAL -->
+<div class="modal" id="detailsModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModal">✕</button>
+    <img id="mImg" src="" alt="">
+    <div class="modal-body">
+      <div class="price" id="mPrice"></div>
+      <h3 id="mTitle"></h3>
+      <p class="meta" id="mMeta"></p>
+      <p id="mDesc"></p>
+      <div class="features" id="mFeatures"></div>
+      <div class="modal-actions">
+        <a href="#" id="mWhats" target="_blank" class="btn btn-green">Chat on WhatsApp</a>
+        <button class="btn btn-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('detailsModal').classList.remove('open')">Book Inspection</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
